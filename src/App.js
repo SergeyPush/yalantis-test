@@ -1,24 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./App.css";
+import Calendar from "./components/Calendar";
 
 function App() {
+  const [userData, setUserData] = useState([]);
+  const [isLoading, setIsLoadinng] = useState(false);
+
+  useEffect(() => {
+    const getUserData = async () => {
+      setIsLoadinng(true);
+      const data = await axios.get(
+        "https://yalantis-react-school-api.yalantis.com/api/task0/users"
+      );
+
+      setUserData(data.data);
+      setIsLoadinng(false);
+    };
+
+    getUserData();
+  }, [setUserData, setIsLoadinng]);
+
+  const convertData = () => {
+    const arr = userData.reduce((obj, { firstName, lastName, dob }) => {
+      const month = new Date(dob).getMonth();
+      const fullName = `${firstName} ${lastName}`;
+      const arr = obj[month] === undefined ? [] : [...obj[month]];
+      return { ...obj, [month]: [...arr, fullName] };
+    }, {});
+    return arr;
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      {isLoading ? "Loading..." : null}
+      {userData.length > 0 && <Calendar userList={convertData(userData)} />}
     </div>
   );
 }

@@ -1,0 +1,67 @@
+.calendar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+.calendar_item {
+  border: 1px solid lightgrey;
+  width: 22%;
+  min-height: 160px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-bottom: 30px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.calendar_item:hover .user_list {
+  display: block;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+  color: #34495e;
+  border-radius: 10px 10px 0 0;
+}
+
+.user_list {
+  display: none;
+  list-style: none;
+  background-color: white;
+  border-radius: 18px;
+  border: 1px solid #34495e;
+  padding: 5px;
+  z-index: 100;
+  position: absolute;
+  top: -20px;
+  right: 0;
+  transform: translateX(105%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.list_item {
+  padding: 3px;
+}
+.body {
+  font-size: 20px;
+  color: #34495e;
+  padding: 10px;
+  text-align: right;
+  margin-top: 70px;
+}
+
+.red {
+  background-color: #ec7063;
+}
+.gray {
+  background-color: #808b96;
+}
+.blue {
+  background-color: #3498db;
+}
+.green {
+  background-color: #48c9b0;
+}
