@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "18f13b4ca83c024534532b364c920630",
+    "revision": "e0cb3726a0c687d40a3f7b0632a6e03b",
     "url": "/yalantis-test/index.html"
   },
   {
-    "revision": "bcb3d9aceb6efb5d3fd4",
-    "url": "/yalantis-test/static/css/main.05725cf8.chunk.css"
+    "revision": "12da999c43156cdbb4b9",
+    "url": "/yalantis-test/static/css/main.ab701e5c.chunk.css"
   },
   {
     "revision": "8e4ca26a62ef47ec9f9d",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/yalantis-test/static/js/2.ae888d7f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bcb3d9aceb6efb5d3fd4",
+    "revision": "12da999c43156cdbb4b9",
     "url": "/yalantis-test/static/js/main.3ca51119.chunk.js"
   },
   {
